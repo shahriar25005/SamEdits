@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shahriar Ahmed Samir — High-Retention Video Editor</title>
+  <meta name="description" content="Portfolio of Shahriar Ahmed Samir — High-retention Long-Form YouTube, Pokémon TCG Pack Battles, Short-Form Reels, and Gaming Video Editor." />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Instrument Serif, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            crimson: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fecdd3',
+              300: '#fda4af',
+              400: '#fb7185',
+              500: '#f43f5e',
+              600: '#e11d48',
+              700: '#be123c',
+              800: '#9f1239',
+              900: '#881337',
+            },
+            ink: {
+              900: '#1a0f13',
+              700: '#4a2e36',
+              500: '#885966',
+              400: '#a67683',
+            }
+          },
+          boxShadow: {
+            'rose-soft': '0 10px 35px -8px rgba(225, 29, 72, 0.12), 0 4px 12px -4px rgba(26, 15, 19, 0.04)',
+            'rose-hover': '0 22px 48px -12px rgba(225, 29, 72, 0.22), 0 8px 20px -6px rgba(26, 15, 19, 0.06)',
+            'rose-glow': '0 0 0 1px rgba(225, 29, 72, 0.16), 0 14px 32px -6px rgba(225, 29, 72, 0.28)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Styles for Editorial Rose Gradient, Animations, and Glassmorphism -->
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(155deg, #fff7f7 0%, #ffe6e9 35%, #fff1f2 68%, #fecdd3 100%);
+      --card-surface: rgba(255, 255, 255, 0.82);
+      --card-border: rgba(225, 29, 72, 0.14);
+      --accent-crimson: #e11d48;
+      --accent-hover: #be123c;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: #1a0f13;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Ambient Fixed Rose Glow Orbs */
+    .ambient-orb {
+      position: fixed;
+      border-radius: 9999px;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(88px);
+      opacity: 0.5;
+    }
+
+    /* Glass Editorial Card */
+    .glass-card {
+      background: var(--card-surface);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--card-border);
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.32s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(225, 29, 72, 0.28);
+      box-shadow: 0 22px 48px -12px rgba(225, 29, 72, 0.18), 0 8px 20px -6px rgba(26, 15, 19, 0.05);
+    }
+
+    /* Editorial Serif Gradient Text */
+    .serif-accent {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 55%, #fb7185 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-right: 0.08em;
+    }
+
+    /* SPA Page Transition */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    .page-view.active {
+      display: block;
+      animation: pageFadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes pageFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Slow Rotating Circular SVG Ring for Intro Video */
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .spin-slow {
+      animation: spinSlow 20s linear infinite;
+    }
+
+    /* Pulsing Rose Ring */
+    @keyframes pulseRing {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.42);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 18px rgba(225, 29, 72, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(225, 29, 72, 0);
+      }
+    }
+
+    .pulse-ring {
+      animation: pulseRing 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Active Nav Link Underline */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #e11d48, #fb7185);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active-nav::after {
+      width: 100%;
+    }
+    .nav-link.active-nav {
+      color: #be123c;
+      font-weight: 600;
+    }
+
+    /* Modal Scale Animation */
+    .modal-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-panel {
+      transform: scale(0.95) translateY(10px);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .modal-backdrop.open .modal-panel {
+      transform: scale(1) translateY(0);
+    }
+
+    /* Custom Subtle Scrollbar */
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fff1f2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(225, 29, 72, 0.28);
+      border-radius: 999px;
+      border: 2px solid #fff1f2;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(190, 18, 60, 0.5);
+    }
+  </style>
+
+  <!-- Early Helper: Defined in <head> so inline <img onerror> never throws ReferenceError -->
+  <script>
+    window.__failedPortraits = new Set();
+
+    window.showPortraitFallback = function(imgEl, index) {
+      window.__failedPortraits.add(index);
+      if (imgEl) {
+        imgEl.style.display = 'none';
+      }
+      var fallback = document.getElementById('portrait-fallback-' + index);
+      if (fallback) {
+        fallback.classList.remove('hidden');
+      }
+    };
+  </script>
+</head>
+<body class="antialiased selection:bg-crimson-600 selection:text-white relative">
+
+  <!-- Ambient Background Orbs (Light Reddish / Rose Glows) -->
+  <div class="ambient-orb w-[34rem] h-[34rem] -top-28 -left-24 bg-rose-300/60" aria-hidden="true"></div>
+  <div class="ambient-orb w-[30rem] h-[30rem] top-[38%] -right-24 bg-crimson-300/50" aria-hidden="true"></div>
+  <div class="ambient-orb w-[28rem] h-[28rem] bottom-[-8rem] left-[22%] bg-pink-200/70" aria-hidden="true"></div>
+
+  <!-- ======================================================================= -->
+  <!-- FIXED GLASS NAVIGATION BAR (evanhfisher.com inspired)                   -->
+  <!-- ======================================================================= -->
+  <header id="main-header" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-white/70 backdrop-blur-xl border-b border-crimson-600/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4 py-3">
+
+      <!-- Left: Brand Wordmark -->
+      <a href="#home" data-route="home" class="group flex items-center gap-2.5 focus:outline-none">
+        <span class="w-8 h-8 rounded-full bg-gradient-to-br from-crimson-600 to-crimson-700 text-white flex items-center justify-center font-serif italic text-lg shadow-sm group-hover:scale-105 transition-transform">
+          S
+        </span>
+        <span class="font-bold tracking-tight text-ink-900 text-base sm:text-lg leading-none">
+          Shahriar Ahmed Samir
+        </span>
+      </a>
+
+      <!-- Center: Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 lg:gap-9 text-sm font-medium text-ink-700" aria-label="Main Navigation">
+        <a href="#about" data-route="about" class="nav-link hover:text-crimson-700 transition-colors py-1">About</a>
+        <a href="#pokemon" data-route="pokemon" class="nav-link hover:text-crimson-700 transition-colors py-1">Pokémon</a>
+        <a href="#reels" data-route="reels" class="nav-link hover:text-crimson-700 transition-colors py-1">Reels</a>
+        <a href="#gaming" data-route="gaming" class="nav-link hover:text-crimson-700 transition-colors py-1">Gaming</a>
+        <a href="#contact" data-route="contact" class="nav-link hover:text-crimson-700 transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Right: Message Me CTA (Redirects to Fiverr) + Mobile Hamburger -->
+      <div class="flex items-center gap-2.5">
+        <a href="https://www.fiverr.com/s/2pQEK88"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-700 hover:to-crimson-800 shadow-rose-glow hover:-translate-y-0.5 transition-all duration-200">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          </svg>
+          <span>Message Me</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn"
+                type="button"
+                aria-label="Toggle Menu"
+                aria-expanded="false"
+                class="md:hidden inline-flex items-center justify-center p-2.5 rounded-xl bg-white/80 border border-crimson-600/15 text-ink-900 hover:bg-crimson-50 transition-colors">
+          <svg id="hamburger-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-menu-icon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="hidden md:hidden bg-white/95 backdrop-blur-2xl border-t border-crimson-600/10 px-4 pt-3 pb-6 shadow-xl">
+      <div class="flex flex-col space-y-1">
+        <a href="#home" data-route="home" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-ink-900 hover:bg-crimson-50 hover:text-crimson-700 transition-colors">Home</a>
+        <a href="#about" data-route="about" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-ink-900 hover:bg-crimson-50 hover:text-crimson-700 transition-colors">About</a>
+        <a href="#pokemon" data-route="pokemon" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-ink-900 hover:bg-crimson-50 hover:text-crimson-700 transition-colors">Pokémon</a>
+        <a href="#reels" data-route="reels" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-ink-900 hover:bg-crimson-50 hover:text-crimson-700 transition-colors">Reels</a>
+        <a href="#gaming" data-route="gaming" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-ink-900 hover:bg-crimson-50 hover:text-crimson-700 transition-colors">Gaming</a>
+        <a href="#contact" data-route="contact" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-medium text-ink-900 hover:bg-crimson-50 hover:text-crimson-700 transition-colors">Contact</a>
+      </div>
+      <div class="mt-4 pt-4 border-t border-crimson-600/10 flex flex-col gap-2.5">
+        <a href="https://www.fiverr.com/s/2pQEK88"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-crimson-600 to-crimson-700 shadow-rose-glow">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          </svg>
+          <span>Message Me on Fiverr</span>
+        </a>
+        <button type="button" onclick="openIntroModal()" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-crimson-700 bg-crimson-50 border border-crimson-600/20">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Intro Video</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================= -->
+  <!-- MAIN SPA CONTAINER                                                      -->
+  <!-- ======================================================================= -->
+  <main class="relative z-10 pt-24 sm:pt-28 pb-20">
+
+    <!-- ===================================================================== -->
+    <!-- PAGE 1: HOME (#home)                                                  -->
+    <!-- ===================================================================== -->
+    <section id="page-home" class="page-view active">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- HERO SECTION (Evan H Fisher Editorial Style + Circle Intro Video) -->
+        <div class="py-10 sm:py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+          <!-- Left Column: Editorial Typography & CTAs -->
+          <div class="lg:col-span-8 space-y-7">
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/80 border border-crimson-600/15 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-crimson-600 animate-pulse"></span>
+              <span class="font-mono text-xs tracking-wider uppercase text-crimson-700 font-medium">[ HIGH-RETENTION VIDEO EDITOR ]</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.08]">
+              I help YouTubers &amp; creators turn raw footage into
+              <span class="serif-accent font-normal text-5xl sm:text-6xl lg:text-[4.4rem] inline-block leading-[1.02]">unforgettable stories.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg lg:text-xl text-ink-700 leading-relaxed max-w-2xl">
+              High-retention Long-Form YouTube, Pokémon TCG Pack Battles, Viral Shorts/Reels, and Gaming Edits engineered for watch time — crafted with
+              <span class="font-semibold text-ink-900">Premiere Pro</span>,
+              <span class="font-semibold text-ink-900">After Effects</span> &amp;
+              <span class="font-semibold text-ink-900">CapCut Pro</span>.
+            </p>
+
+            <!-- Primary CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-2">
+              <a href="#contact" data-route="contact"
+                 class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-700 hover:to-crimson-800 shadow-rose-glow hover:-translate-y-0.5 transition-all">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>Book a 30-Min Call</span>
+              </a>
+
+              <a href="https://www.fiverr.com/s/2pQEK88"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-ink-900 bg-white/85 hover:bg-white border border-crimson-600/20 hover:border-crimson-600/40 shadow-rose-soft hover:-translate-y-0.5 transition-all">
+                <span>Message Me on Fiverr</span>
+                <svg class="w-4 h-4 text-crimson-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Subtle Editorial Trust Stats -->
+            <div class="pt-4 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-mono text-ink-500 uppercase tracking-wider">
+              <span class="flex items-center gap-2"><span class="text-crimson-600 font-bold">01/</span> Long-Form &amp; Shorts</span>
+              <span class="flex items-center gap-2"><span class="text-crimson-600 font-bold">02/</span> Hook &amp; Retention Focused</span>
+              <span class="flex items-center gap-2"><span class="text-crimson-600 font-bold">03/</span> EN · ES · DE</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Signature Circle Introduction Video Widget -->
+          <div class="lg:col-span-4 flex flex-col items-center justify-center">
+            <button type="button"
+                    onclick="openIntroModal()"
+                    aria-label="Play Shahriar Ahmed Samir Introduction Video"
+                    class="group relative w-52 h-52 sm:w-56 sm:h-56 flex items-center justify-center focus:outline-none">
+              <!-- Rotating Circular Text SVG Ring -->
+              <svg class="spin-slow absolute inset-0 w-full h-full text-crimson-700/80 group-hover:text-crimson-600 transition-colors" viewBox="0 0 200 200">
+                <defs>
+                  <path id="introCirclePath" d="M 100, 100 m -82, 0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0" />
+                </defs>
+                <text fill="currentColor" font-size="11.2" font-family="JetBrains Mono, monospace" font-weight="600" letter-spacing="3.2">
+                  <textPath href="#introCirclePath">• WATCH INTRO • SHAHRIAR AHMED SAMIR • </textPath>
+                </text>
+              </svg>
+
+              <!-- Inner Circle Video Preview -->
+              <div class="pulse-ring relative w-36 h-36 sm:w-40 sm:h-40 rounded-full overflow-hidden border-[3px] border-white shadow-rose-hover bg-gradient-to-br from-crimson-600 via-rose-500 to-crimson-800 group-hover:scale-105 transition-transform duration-300">
+                <img src="https://i.ytimg.com/vi/HKNAx6V1SMU/hqdefault.jpg"
+                     alt="Shahriar Ahmed Samir Intro Video Thumbnail"
+                     class="w-full h-full object-cover scale-125 group-hover:scale-[1.32] transition-transform duration-500"
+                     onerror="this.style.display='none'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-ink-900/55 via-crimson-900/20 to-transparent group-hover:from-ink-900/35 transition-colors"></div>
+
+                <!-- Centered Play Button -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-12 h-12 rounded-full bg-white/95 text-crimson-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-crimson-600 group-hover:text-white transition-all duration-200">
+                    <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <p class="mt-3 font-mono text-xs text-ink-500 tracking-wide uppercase text-center">
+              Click circle to play intro
+            </p>
+          </div>
+        </div>
+
+        <!-- FEATURED WORK SHOWCASE (3 Signature Picks) -->
+        <div class="py-12 border-t border-crimson-600/12">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-2">[ FEATURED SHOWCASE ]</p>
+              <h2 class="text-2xl sm:text-3xl font-bold text-ink-900 tracking-tight">
+                Selected edits across <span class="serif-accent font-normal text-3xl sm:text-4xl">every format.</span>
+              </h2>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <a href="#pokemon" data-route="pokemon" class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-white/80 hover:bg-crimson-600 hover:text-white border border-crimson-600/15 text-ink-700 transition-colors">Pokémon →</a>
+              <a href="#reels" data-route="reels" class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-white/80 hover:bg-crimson-600 hover:text-white border border-crimson-600/15 text-ink-700 transition-colors">Reels →</a>
+              <a href="#gaming" data-route="gaming" class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-white/80 hover:bg-crimson-600 hover:text-white border border-crimson-600/15 text-ink-700 transition-colors">Gaming →</a>
+            </div>
+          </div>
+
+          <div id="home-featured-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- EDITORIAL "OPEN LETTER TO CREATORS" (evanhfisher.com signature block) -->
+        <div class="py-14 sm:py-20 border-t border-crimson-600/12">
+          <div class="glass-card rounded-3xl p-7 sm:p-12 lg:p-16 shadow-rose-soft">
+            <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-6">
+              [ AN OPEN LETTER TO CREATORS ]
+            </p>
+            <div class="space-y-6 max-w-4xl">
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-ink-900 leading-snug tracking-tight">
+                Anyone can cut clips together. Very few editors understand
+                <span class="serif-accent font-normal text-3xl sm:text-4xl lg:text-5xl">why viewers stay.</span>
+              </h2>
+              <p class="text-base sm:text-lg text-ink-700 leading-relaxed">
+                You already put hours into filming, planning pack battles, recording commentary, and building a channel you care about. The difference between a video that flatlines at 30 seconds and one that keeps audiences glued until the final card pull isn't flashy randomness — it's <strong class="text-ink-900 font-semibold">hook psychology, rhythmic pacing, and invisible sound design.</strong>
+              </p>
+              <p class="text-base sm:text-lg text-ink-700 leading-relaxed">
+                Every jump cut, SFX riser, motion graphic callout, and comedic beat I craft is designed with one goal: turning casual clickers into binge-watching subscribers while protecting your unique voice and saving you dozens of hours every week.
+              </p>
+              <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-crimson-600/12">
+                <div>
+                  <p class="font-serif italic text-2xl text-crimson-700">Shahriar Ahmed Samir</p>
+                  <p class="font-mono text-xs text-ink-500 uppercase tracking-wider">Video Editor · Retention Strategist</p>
+                </div>
+                <a href="#about" data-route="about" class="inline-flex items-center gap-2 text-sm font-semibold text-crimson-700 hover:text-crimson-800 transition-colors">
+                  <span>Read my full story &amp; workflow</span>
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOUR WAYS I CAN HELP YOU (evanhfisher.com 4-ways interactive grid) -->
+        <div class="py-12 sm:py-16 border-t border-crimson-600/12">
+          <div class="mb-10">
+            <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-2">[ HOW WE WORK TOGETHER ]</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-ink-900 tracking-tight">
+              Four ways I can <span class="serif-accent font-normal text-4xl sm:text-5xl">elevate your channel.</span>
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- 01 -->
+            <a href="#pokemon" data-route="pokemon" class="glass-card group rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:-translate-y-1">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-mono text-sm font-bold text-crimson-600">01 /</span>
+                  <span class="w-9 h-9 rounded-full bg-crimson-50 text-crimson-600 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-ink-900 mb-2">Pokémon TCG &amp; Pack Battle Long-Form</h3>
+                <p class="text-sm sm:text-base text-ink-700 leading-relaxed">
+                  Score-tracked booster battles, mystery box unboxings, live PSA/ungraded price callouts, and high-hype chase card reveals built for 20+ minute retention.
+                </p>
+              </div>
+              <span class="mt-5 font-mono text-xs text-crimson-600 font-semibold uppercase tracking-wider">Explore 11 Pokémon Edits →</span>
+            </a>
+
+            <!-- 02 -->
+            <a href="#reels" data-route="reels" class="glass-card group rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:-translate-y-1">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-mono text-sm font-bold text-crimson-600">02 /</span>
+                  <span class="w-9 h-9 rounded-full bg-crimson-50 text-crimson-600 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-ink-900 mb-2">Viral Short-Form Reels &amp; Speed Ramps</h3>
+                <p class="text-sm sm:text-base text-ink-700 leading-relaxed">
+                  Scroll-stopping YouTube Shorts, Instagram Reels, and TikToks featuring beat-synced speed ramps, 3D depth-masked text, and kinetic motion graphics.
+                </p>
+              </div>
+              <span class="mt-5 font-mono text-xs text-crimson-600 font-semibold uppercase tracking-wider">Explore Reels Portfolio →</span>
+            </a>
+
+            <!-- 03 -->
+            <a href="#gaming" data-route="gaming" class="glass-card group rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:-translate-y-1">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-mono text-sm font-bold text-crimson-600">03 /</span>
+                  <span class="w-9 h-9 rounded-full bg-crimson-50 text-crimson-600 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-ink-900 mb-2">High-Retention Gaming &amp; Comedy Edits</h3>
+                <p class="text-sm sm:text-base text-ink-700 leading-relaxed">
+                  Fast-paced GTA V challenges, Minecraft lore breakdowns, PNG-tuber avatar reactions, punchy meme cutaways, and tight comedic sound design.
+                </p>
+              </div>
+              <span class="mt-5 font-mono text-xs text-crimson-600 font-semibold uppercase tracking-wider">Explore Gaming Edits →</span>
+            </a>
+
+            <!-- 04 -->
+            <a href="#contact" data-route="contact" class="glass-card group rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:-translate-y-1">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-mono text-sm font-bold text-crimson-600">04 /</span>
+                  <span class="w-9 h-9 rounded-full bg-crimson-50 text-crimson-600 flex items-center justify-center group-hover:bg-crimson-600 group-hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10"/></svg>
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-ink-900 mb-2">Ongoing Channel Partnerships &amp; 1-on-1 Strategy</h3>
+                <p class="text-sm sm:text-base text-ink-700 leading-relaxed">
+                  Lock in a reliable weekly upload cadence, custom visual identity, multi-cam syncing, and AI-assisted production workflows tailored to your channel.
+                </p>
+              </div>
+              <span class="mt-5 font-mono text-xs text-crimson-600 font-semibold uppercase tracking-wider">Book a 30-Min Discovery Call →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- RECENT HIGHLIGHTS INDEX (evanhfisher.com numbered rows 001 /, 002 /) -->
+        <div class="py-12 border-t border-crimson-600/12">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-2">[ RECENT HIGHLIGHTS INDEX ]</p>
+              <h2 class="text-2xl sm:text-3xl font-bold text-ink-900 tracking-tight">Instant preview archive</h2>
+            </div>
+            <p class="font-mono text-xs text-ink-500">Click any row to play immediately</p>
+          </div>
+
+          <div id="home-highlights-index" class="glass-card rounded-2xl divide-y divide-crimson-600/10 overflow-hidden">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- PAGE 2: ABOUT (#about)                                                -->
+    <!-- ===================================================================== -->
+    <section id="page-about" class="page-view">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+
+        <!-- About Header -->
+        <div class="max-w-4xl space-y-5 mb-12">
+          <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ ABOUT ]</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink-900 tracking-tight leading-[1.08]">
+            I edit high-retention videos that keep audiences watching
+            <span class="serif-accent font-normal text-5xl sm:text-6xl lg:text-[4.3rem]">until the final frame.</span>
+          </h1>
+          <p class="text-lg text-ink-700 leading-relaxed max-w-2xl">
+            Hey, I'm <strong class="text-ink-900">Shahriar Ahmed Samir</strong> — a dedicated video editor partnering with YouTubers, Pokémon TCG creators, gamers, and brands to turn raw footage into binge-worthy content.
+          </p>
+        </div>
+
+        <!-- Visual Identity & Creator Gallery (3 Portrait Cards + Local Upload Preview) -->
+        <div class="mb-16">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+            <div>
+              <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ CREATOR &amp; VISUAL IDENTITY ]</p>
+              <p class="text-sm text-ink-600 mt-1">
+                Portraits &amp; custom artwork from
+                <a href="https://x.com/shahriar_jpeg" target="_blank" rel="noopener noreferrer" class="underline decoration-crimson-400 hover:text-crimson-700 font-medium">@shahriar_jpeg</a>
+                &amp;
+                <a href="https://www.instagram.com/nman_frtist/" target="_blank" rel="noopener noreferrer" class="underline decoration-crimson-400 hover:text-crimson-700 font-medium">@nman_frtist</a>
+              </p>
+            </div>
+
+            <!-- Discreet Local Portraits Loader Button -->
+            <label class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono font-medium bg-white/85 hover:bg-crimson-50 text-ink-700 hover:text-crimson-700 border border-crimson-600/20 cursor-pointer shadow-sm transition-colors">
+              <svg class="w-3.5 h-3.5 text-crimson-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Load Local Portraits</span>
+              <input id="local-portraits-input" type="file" multiple accept="image/*" class="hidden" />
+            </label>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Portrait Card 1: Real Photo -->
+            <div class="glass-card rounded-3xl overflow-hidden group">
+              <div class="relative aspect-[4/5] bg-gradient-to-br from-rose-100 via-crimson-100 to-rose-200 overflow-hidden">
+                <img id="portrait-img-0"
+                     src="840023045_18117945614081897_3343950179757784438_n.jpg"
+                     alt="Shahriar Ahmed Samir Portrait"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     onerror="showPortraitFallback(this, 0)" />
+                <!-- Artistic Fallback 0 -->
+                <div id="portrait-fallback-0" class="hidden absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#fff0f2] via-[#fecdd3] to-[#fda4af]">
+                  <svg class="w-24 h-24 text-crimson-700/80 mb-4" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="2" stroke-dasharray="6 5" opacity="0.5"/>
+                    <circle cx="60" cy="46" r="18" fill="currentColor" opacity="0.18" stroke="currentColor" stroke-width="2.5"/>
+                    <path d="M28 96c5-18 18-27 32-27s27 9 32 27" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="font-serif italic text-2xl text-ink-900">Shahriar Ahmed Samir</span>
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-crimson-800 mt-1">Creator Portrait · Warm Light</span>
+                </div>
+                <div class="absolute bottom-3 left-3 right-3 px-3.5 py-2 rounded-xl bg-white/85 backdrop-blur-md border border-crimson-600/15 flex items-center justify-between">
+                  <span class="font-mono text-[11px] font-semibold text-ink-900">01 / BEHIND THE TIMELINE</span>
+                  <span class="text-[11px] text-crimson-600 font-medium">Real Portrait</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portrait Card 2: Neon Pop-Art Avatar -->
+            <div class="glass-card rounded-3xl overflow-hidden group">
+              <div class="relative aspect-[4/5] bg-gradient-to-br from-fuchsia-950 via-crimson-900 to-ink-900 overflow-hidden">
+                <img id="portrait-img-1"
+                     src="Gemini_Generated_Image_5g88e15g88e15g88.jpg"
+                     alt="Shahriar Pop-Art Headphones Avatar"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     onerror="showPortraitFallback(this, 1)" />
+                <!-- Artistic Fallback 1 -->
+                <div id="portrait-fallback-1" class="hidden absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#2d0a22] via-[#7f103d] to-[#e11d48]">
+                  <svg class="w-24 h-24 text-rose-200 mb-4" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="46" stroke="currentColor" stroke-width="2.5" opacity="0.45"/>
+                    <path d="M30 62c0-18 13-32 30-32s30 14 30 32" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <rect x="22" y="56" width="14" height="26" rx="7" fill="currentColor" opacity="0.9"/>
+                    <rect x="84" y="56" width="14" height="26" rx="7" fill="currentColor" opacity="0.9"/>
+                    <circle cx="60" cy="68" r="14" stroke="currentColor" stroke-width="2.5" opacity="0.7"/>
+                  </svg>
+                  <span class="font-serif italic text-2xl text-white">Studio Persona</span>
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-rose-200 mt-1">Headphones &amp; Halftone Art</span>
+                </div>
+                <div class="absolute bottom-3 left-3 right-3 px-3.5 py-2 rounded-xl bg-white/85 backdrop-blur-md border border-crimson-600/15 flex items-center justify-between">
+                  <span class="font-mono text-[11px] font-semibold text-ink-900">02 / STUDIO PERSONA</span>
+                  <span class="text-[11px] text-crimson-600 font-medium">Avatar Art</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portrait Card 3: Bold Crimson Anime Illustration -->
+            <div class="glass-card rounded-3xl overflow-hidden group">
+              <div class="relative aspect-[4/5] bg-gradient-to-br from-crimson-600 via-red-600 to-crimson-800 overflow-hidden">
+                <img id="portrait-img-2"
+                     src="Gemini_Generated_Image_22swqg22swqg22sw.jpeg"
+                     alt="Shahriar Crimson Anime Style Illustration"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     onerror="showPortraitFallback(this, 2)" />
+                <!-- Artistic Fallback 2 -->
+                <div id="portrait-fallback-2" class="hidden absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#e11d48] via-[#be123c] to-[#4c0519]">
+                  <svg class="w-24 h-24 text-white mb-4" viewBox="0 0 120 120" fill="none">
+                    <path d="M60 16l9 28 29 9-29 9-9 28-9-28-29-9 29-9 9-28z" fill="currentColor" opacity="0.9"/>
+                    <circle cx="60" cy="60" r="48" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.5"/>
+                  </svg>
+                  <span class="font-serif italic text-2xl text-white">Crimson Energy</span>
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-rose-100 mt-1">Editorial Illustration</span>
+                </div>
+                <div class="absolute bottom-3 left-3 right-3 px-3.5 py-2 rounded-xl bg-white/85 backdrop-blur-md border border-crimson-600/15 flex items-center justify-between">
+                  <span class="font-mono text-[11px] font-semibold text-ink-900">03 / CRIMSON EDITION</span>
+                  <span class="text-[11px] text-crimson-600 font-medium">@nman_frtist vibe</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MY STORY + SOFTWARE / AI / LANGUAGES STACK -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+          <!-- Editorial Narrative -->
+          <div class="lg:col-span-7 glass-card rounded-3xl p-7 sm:p-10 space-y-5">
+            <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ MY STORY ]</p>
+            <h2 class="text-2xl sm:text-3xl font-bold text-ink-900 leading-snug">
+              Built for creators who care deeply about <span class="serif-accent font-normal text-3xl sm:text-4xl">watch time &amp; craft.</span>
+            </h2>
+            <p class="text-base text-ink-700 leading-relaxed">
+              I specialise in high-retention <strong class="text-ink-900">Long-Form YouTube</strong> and <strong class="text-ink-900">Short-Form Reels &amp; Shorts</strong>. Whether it's a 24-minute Pokémon TCG mystery box reveal, an 18-round booster pack battle, a beat-synced speed ramp reel, or a meme-packed GTA V gaming challenge, I treat every timeline like a story engineered to hold attention.
+            </p>
+            <p class="text-base text-ink-700 leading-relaxed">
+              My core focus spans <strong class="text-ink-900">hook optimization</strong> in the critical first seconds, <strong class="text-ink-900">custom motion graphics</strong>, seamless <strong class="text-ink-900">multi-cam syncing</strong>, and immersive <strong class="text-ink-900">full SFX mixing</strong>. I combine traditional post-production craftsmanship with modern AI tools to deliver faster turnarounds without sacrificing creative polish.
+            </p>
+            <div class="pt-3 flex flex-wrap items-center gap-3">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Available for Ongoing Channel Partnerships &amp; One-Off Projects
+              </span>
+            </div>
+          </div>
+
+          <!-- Technical Stack & Languages -->
+          <div class="lg:col-span-5 flex flex-col gap-5">
+            <!-- Editing Software -->
+            <div class="glass-card rounded-2xl p-6">
+              <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-3">[ SOFTWARE STACK ]</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3.5 py-2 rounded-xl bg-crimson-50 text-ink-900 border border-crimson-600/15 text-sm font-semibold">Adobe Premiere Pro</span>
+                <span class="px-3.5 py-2 rounded-xl bg-crimson-50 text-ink-900 border border-crimson-600/15 text-sm font-semibold">Adobe After Effects</span>
+                <span class="px-3.5 py-2 rounded-xl bg-crimson-50 text-ink-900 border border-crimson-600/15 text-sm font-semibold">CapCut Pro</span>
+              </div>
+            </div>
+
+            <!-- AI & Creative Workflow Stack -->
+            <div class="glass-card rounded-2xl p-6">
+              <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-3">[ AI &amp; CREATIVE WORKFLOW ]</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 rounded-xl bg-white/90 text-ink-800 border border-crimson-600/15 text-xs font-mono font-medium">ChatGPT</span>
+                <span class="px-3 py-1.5 rounded-xl bg-white/90 text-ink-800 border border-crimson-600/15 text-xs font-mono font-medium">ElevenLabs</span>
+                <span class="px-3 py-1.5 rounded-xl bg-white/90 text-ink-800 border border-crimson-600/15 text-xs font-mono font-medium">Gemini</span>
+                <span class="px-3 py-1.5 rounded-xl bg-white/90 text-ink-800 border border-crimson-600/15 text-xs font-mono font-medium">Grok</span>
+                <span class="px-3 py-1.5 rounded-xl bg-white/90 text-ink-800 border border-crimson-600/15 text-xs font-mono font-medium">Nano Banana</span>
+              </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="glass-card rounded-2xl p-6">
+              <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-3">[ LANGUAGES ]</p>
+              <p class="text-sm text-ink-700 mb-3">Smooth communication &amp; multilingual captioning for international creators:</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-crimson-600 to-crimson-700 text-white text-xs font-semibold">English</span>
+                <span class="px-3.5 py-1.5 rounded-full bg-white text-ink-900 border border-crimson-600/20 text-xs font-semibold">Spanish</span>
+                <span class="px-3.5 py-1.5 rounded-full bg-white text-ink-900 border border-crimson-600/20 text-xs font-semibold">German</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIX PILLARS OF EVERY EDIT I DELIVER (Evan's 6-topics section) -->
+        <div class="py-12 border-t border-crimson-600/12">
+          <div class="mb-9">
+            <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-2">[ EDITORIAL PHILOSOPHY ]</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-ink-900 tracking-tight">
+              Six pillars of <span class="serif-accent font-normal text-4xl sm:text-5xl">every edit I deliver.</span>
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="glass-card rounded-2xl p-6">
+              <span class="font-mono text-xs font-bold text-crimson-600">01 /</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-2 mb-2">Hook Optimization (First 3–15s)</h3>
+              <p class="text-sm text-ink-700 leading-relaxed">Tightly engineered visual teasers, pattern interrupts, and curiosity loops that lock viewers in immediately.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+              <span class="font-mono text-xs font-bold text-crimson-600">02 /</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-2 mb-2">Custom Motion Graphics &amp; Captions</h3>
+              <p class="text-sm text-ink-700 leading-relaxed">Kinetic typography, 3D depth-masked titles, price pop-ups, and branded overlays built in After Effects &amp; Premiere.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+              <span class="font-mono text-xs font-bold text-crimson-600">03 /</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-2 mb-2">Pokémon TCG &amp; Pack Battle Storytelling</h3>
+              <p class="text-sm text-ink-700 leading-relaxed">Live scoreboards, hit-rate tension building, PSA valuation overlays, and electric chase card climax edits.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+              <span class="font-mono text-xs font-bold text-crimson-600">04 /</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-2 mb-2">Speed Ramps &amp; Viral Reels Pacing</h3>
+              <p class="text-sm text-ink-700 leading-relaxed">Beat-synced velocity curves, whip transitions, and punchy vertical compositions crafted for maximum replays.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+              <span class="font-mono text-xs font-bold text-crimson-600">05 /</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-2 mb-2">Full SFX Mixing &amp; Audio Design</h3>
+              <p class="text-sm text-ink-700 leading-relaxed">Layered risers, impacts, whooshes, comedic stings, and balanced voice clarity so every moment hits with weight.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+              <span class="font-mono text-xs font-bold text-crimson-600">06 /</span>
+              <h3 class="text-lg font-bold text-ink-900 mt-2 mb-2">Multi-Cam Syncing &amp; Long-Form Retention</h3>
+              <p class="text-sm text-ink-700 leading-relaxed">Dynamic multi-angle cuts, seamless audio sync, and narrative pacing that sustains energy across 20+ minute videos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PORTFOLIO & PLATFORM LINKS STRIP -->
+        <div class="pt-10 border-t border-crimson-600/12">
+          <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-4">[ PLATFORMS &amp; PORTFOLIOS ]</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://portfolio.malloy.sg/ShahriarAhmedSamir" target="_blank" rel="noopener noreferrer" class="glass-card px-5 py-2.5 rounded-full text-sm font-semibold text-ink-900 hover:text-crimson-700 inline-flex items-center gap-2">Malloy Portfolio <span>↗</span></a>
+            <a href="https://1000framescom.vercel.app/" target="_blank" rel="noopener noreferrer" class="glass-card px-5 py-2.5 rounded-full text-sm font-semibold text-ink-900 hover:text-crimson-700 inline-flex items-center gap-2">1000Frames <span>↗</span></a>
+            <a href="https://www.youtube.com/@shahriarahmedsamir" target="_blank" rel="noopener noreferrer" class="glass-card px-5 py-2.5 rounded-full text-sm font-semibold text-ink-900 hover:text-crimson-700 inline-flex items-center gap-2">YouTube Channel <span>↗</span></a>
+            <a href="https://www.fiverr.com/s/2pQEK88" target="_blank" rel="noopener noreferrer" class="glass-card px-5 py-2.5 rounded-full text-sm font-semibold text-crimson-700 hover:bg-crimson-600 hover:text-white inline-flex items-center gap-2">Fiverr Profile <span>↗</span></a>
+            <a href="https://www.upwork.com/freelancers/~01baa86143bbc37409" target="_blank" rel="noopener noreferrer" class="glass-card px-5 py-2.5 rounded-full text-sm font-semibold text-ink-900 hover:text-crimson-700 inline-flex items-center gap-2">Upwork <span>↗</span></a>
+            <a href="https://linktr.ee/shahriarahmed" target="_blank" rel="noopener noreferrer" class="glass-card px-5 py-2.5 rounded-full text-sm font-semibold text-ink-900 hover:text-crimson-700 inline-flex items-center gap-2">Linktree <span>↗</span></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- PAGE 3: POKÉMON (#pokemon)                                            -->
+    <!-- ===================================================================== -->
+    <section id="page-pokemon" class="page-view">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+
+        <!-- Category Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+          <div class="max-w-2xl space-y-3">
+            <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ POKÉMON TCG &amp; PACK BATTLES ]</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-ink-900 tracking-tight">
+              Pokémon <span class="serif-accent font-normal text-5xl sm:text-6xl">Portfolio.</span>
+            </h1>
+            <p class="text-base text-ink-700 leading-relaxed">
+              Full-length booster box battles, mystery box unboxings, rare card valuation shorts, and CapCut Pro live TCG edits — all previewable directly below.
+            </p>
+          </div>
+          <a href="https://www.youtube.com/playlist?list=PL3Wv4Zo-wNs3jyzbujFOzeDsSRZlpCBWy"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="self-start lg:self-end inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-white/85 hover:bg-crimson-600 text-crimson-700 hover:text-white border border-crimson-600/20 shadow-sm transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>Open Full YouTube Playlist ↗</span>
+          </a>
+        </div>
+
+        <!-- Filter Pills -->
+        <div id="pokemon-filters" class="flex flex-wrap items-center gap-2.5 mb-8">
+          <button type="button" data-filter="all" class="filter-pill active px-4 py-2 rounded-full text-xs font-mono font-semibold transition-all bg-crimson-600 text-white shadow-sm">All (11)</button>
+          <button type="button" data-filter="Long-Form" class="filter-pill px-4 py-2 rounded-full text-xs font-mono font-semibold transition-all bg-white/80 text-ink-700 hover:bg-crimson-50 border border-crimson-600/15">Long-Form (3)</button>
+          <button type="button" data-filter="Shorts" class="filter-pill px-4 py-2 rounded-full text-xs font-mono font-semibold transition-all bg-white/80 text-ink-700 hover:bg-crimson-50 border border-crimson-600/15">Shorts &amp; Reels (3)</button>
+          <button type="button" data-filter="Live Project" class="filter-pill px-4 py-2 rounded-full text-xs font-mono font-semibold transition-all bg-white/80 text-ink-700 hover:bg-crimson-50 border border-crimson-600/15">Live Projects (5)</button>
+        </div>
+
+        <!-- Video Cards Grid -->
+        <div id="pokemon-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Rendered by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- PAGE 4: REELS (#reels)                                                -->
+    <!-- ===================================================================== -->
+    <section id="page-reels" class="page-view">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+
+        <!-- Category Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+          <div class="max-w-2xl space-y-3">
+            <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ SHORT-FORM REELS &amp; MOTION GFX ]</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-ink-900 tracking-tight">
+              Reels &amp; <span class="serif-accent font-normal text-5xl sm:text-6xl">Motion GFX.</span>
+            </h1>
+            <p class="text-base text-ink-700 leading-relaxed">
+              High-velocity vertical reels, commercial speed ramps, 3D text depth masks, story recaps, and cinematic cuts designed to hook viewers in the very first second.
+            </p>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLF9DHY64LYyQ&si=QxRK-HRmAE_6PEAf"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="self-start lg:self-end inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-white/85 hover:bg-crimson-600 text-crimson-700 hover:text-white border border-crimson-600/20 shadow-sm transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>Open Reels Playlist ↗</span>
+          </a>
+        </div>
+
+        <!-- Video Cards Grid -->
+        <div id="reels-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Rendered by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- PAGE 5: GAMING (#gaming)                                              -->
+    <!-- ===================================================================== -->
+    <section id="page-gaming" class="page-view">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+
+        <!-- Category Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+          <div class="max-w-2xl space-y-3">
+            <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ GAMING &amp; ENTERTAINMENT EDITS ]</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-ink-900 tracking-tight">
+              Gaming <span class="serif-accent font-normal text-5xl sm:text-6xl">Highlights.</span>
+            </h1>
+            <p class="text-base text-ink-700 leading-relaxed">
+              Comedy challenges, animated avatar reactions, lore breakdowns, kinetic humor shorts, and competitive battle formats engineered for unstoppable watch time.
+            </p>
+          </div>
+          <a href="https://www.fiverr.com/s/2pQEK88"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="self-start lg:self-end inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-gradient-to-r from-crimson-600 to-crimson-700 text-white shadow-sm hover:opacity-95 transition-opacity">
+            <span>Order a Gaming Edit on Fiverr ↗</span>
+          </a>
+        </div>
+
+        <!-- Video Cards Grid -->
+        <div id="gaming-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Rendered by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- PAGE 6: CONTACT (#contact) — Calendly Booking + Direct Channels       -->
+    <!-- ===================================================================== -->
+    <section id="page-contact" class="page-view">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+
+        <!-- Contact Header -->
+        <div class="max-w-3xl space-y-4 mb-10">
+          <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ GET IN TOUCH ]</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink-900 tracking-tight leading-[1.08]">
+            Let's build your next
+            <span class="serif-accent font-normal text-5xl sm:text-6xl lg:text-[4.3rem]">high-retention video.</span>
+          </h1>
+          <p class="text-base sm:text-lg text-ink-700 leading-relaxed">
+            Book a 30-minute discovery call directly on my calendar below, message me on Fiverr, or reach out via Discord or email.
+          </p>
+        </div>
+
+        <!-- INTERACTIVE BOOKING CALENDAR (Calendly Inline Widget) -->
+        <div class="glass-card rounded-3xl p-5 sm:p-8 shadow-rose-soft mb-12">
+          <!-- Top Action Bar -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 mb-5 border-b border-crimson-600/12">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-crimson-600 to-crimson-700 text-white flex items-center justify-center shadow-sm">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-lg sm:text-xl font-bold text-ink-900">Book a 30-Min Discovery Call</h2>
+                <p class="text-xs font-mono text-ink-500">calendly.com/shahriarahmedsamir/30min</p>
+              </div>
+            </div>
+            <a href="https://calendly.com/shahriarahmedsamir/30min"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-700 hover:to-crimson-800 shadow-sm transition-all">
+              <span>Open Calendar in New Tab ↗</span>
+            </a>
+          </div>
+
+          <!-- Official Calendly Inline Widget Container -->
+          <div class="rounded-2xl overflow-hidden bg-white border border-crimson-600/10">
+            <div class="calendly-inline-widget"
+                 data-url="https://calendly.com/shahriarahmedsamir/30min?hide_gdpr_banner=1&primary_color=e11d48"
+                 style="min-width:280px;height:680px;"></div>
+          </div>
+
+          <!-- Bottom Direct Fallback Bar -->
+          <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-500 bg-crimson-50/70 rounded-xl px-4 py-3 border border-crimson-600/10">
+            <span>Prefer opening in a new tab or viewing in an embedded preview?</span>
+            <a href="https://calendly.com/shahriarahmedsamir/30min"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="font-semibold text-crimson-700 hover:underline">
+              Book 30-Min Discovery Call directly on Calendly →
+            </a>
+          </div>
+        </div>
+
+        <!-- DIRECT CHANNELS GRID (Fiverr, Upwork, Email, Discord) -->
+        <div class="mb-12">
+          <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-5">[ DIRECT CHANNELS ]</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+            <!-- Fiverr -->
+            <a href="https://www.fiverr.com/s/2pQEK88" target="_blank" rel="noopener noreferrer"
+               class="glass-card group rounded-2xl p-6 flex items-center justify-between hover:-translate-y-0.5">
+              <div>
+                <p class="font-mono text-xs text-crimson-600 font-semibold uppercase">01 / Freelance</p>
+                <h3 class="text-lg font-bold text-ink-900 mt-1">Hire on Fiverr (Message Me)</h3>
+                <p class="text-sm text-ink-600 mt-0.5">Fast quotes, custom offers &amp; direct messaging</p>
+              </div>
+              <span class="w-10 h-10 rounded-full bg-crimson-50 text-crimson-600 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-colors shrink-0 ml-3">
+                ↗
+              </span>
+            </a>
+
+            <!-- Upwork -->
+            <a href="https://www.upwork.com/freelancers/~01baa86143bbc37409" target="_blank" rel="noopener noreferrer"
+               class="glass-card group rounded-2xl p-6 flex items-center justify-between hover:-translate-y-0.5">
+              <div>
+                <p class="font-mono text-xs text-crimson-600 font-semibold uppercase">02 / Contracts</p>
+                <h3 class="text-lg font-bold text-ink-900 mt-1">Hire on Upwork</h3>
+                <p class="text-sm text-ink-600 mt-0.5">Hourly or milestone channel partnerships</p>
+              </div>
+              <span class="w-10 h-10 rounded-full bg-crimson-50 text-crimson-600 group-hover:bg-crimson-600 group-hover:text-white flex items-center justify-center transition-colors shrink-0 ml-3">
+                ↗
+              </span>
+            </a>
+
+            <!-- Email with One-Click Copy -->
+            <div class="glass-card rounded-2xl p-6 flex items-center justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-mono text-xs text-crimson-600 font-semibold uppercase">03 / Email</p>
+                <a href="mailto:Samedits@icloud.com" class="block text-lg font-bold text-ink-900 hover:text-crimson-700 mt-1 truncate">Samedits@icloud.com</a>
+                <p class="text-sm text-ink-600 mt-0.5">Direct inquiries &amp; footage links</p>
+              </div>
+              <button type="button"
+                      onclick="copyToClipboard('Samedits@icloud.com', 'Email copied to clipboard!')"
+                      class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold bg-crimson-50 hover:bg-crimson-600 text-crimson-700 hover:text-white border border-crimson-600/15 transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <!-- Discord with One-Click Copy -->
+            <div class="glass-card rounded-2xl p-6 flex items-center justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-mono text-xs text-crimson-600 font-semibold uppercase">04 / Discord</p>
+                <p class="text-lg font-bold text-ink-900 mt-1 truncate">Shahriar.jpeg</p>
+                <p class="text-sm text-ink-600 mt-0.5">Quick chat &amp; live project reviews</p>
+              </div>
+              <button type="button"
+                      onclick="copyToClipboard('Shahriar.jpeg', 'Discord handle copied!')"
+                      class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold bg-crimson-50 hover:bg-crimson-600 text-crimson-700 hover:text-white border border-crimson-600/15 transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <span>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ALL SOCIAL & PORTFOLIO LINKS -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8">
+          <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold mb-5">[ SOCIALS &amp; PORTFOLIOS ]</p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <a href="https://www.instagram.com/shahriar.jpeg/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-3 rounded-xl bg-white/80 hover:bg-crimson-50 border border-crimson-600/10 text-sm font-semibold text-ink-900 hover:text-crimson-700 transition-colors">
+              <span>Instagram</span><span class="text-crimson-500">↗</span>
+            </a>
+            <a href="https://www.instagram.com/nman_frtist/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-3 rounded-xl bg-white/80 hover:bg-crimson-50 border border-crimson-600/10 text-sm font-semibold text-ink-900 hover:text-crimson-700 transition-colors">
+              <span>Art IG</span><span class="text-crimson-500">↗</span>
+            </a>
+            <a href="https://x.com/shahriar_jpeg" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-3 rounded-xl bg-white/80 hover:bg-crimson-50 border border-crimson-600/10 text-sm font-semibold text-ink-900 hover:text-crimson-700 transition-colors">
+              <span>X (Twitter)</span><span class="text-crimson-500">↗</span>
+            </a>
+            <a href="https://www.youtube.com/@shahriarahmedsamir" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-3 rounded-xl bg-white/80 hover:bg-crimson-50 border border-crimson-600/10 text-sm font-semibold text-ink-900 hover:text-crimson-700 transition-colors">
+              <span>YouTube</span><span class="text-crimson-500">↗</span>
+            </a>
+            <a href="https://www.facebook.com/shahriaraahmedsamir" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-3 rounded-xl bg-white/80 hover:bg-crimson-50 border border-crimson-600/10 text-sm font-semibold text-ink-900 hover:text-crimson-700 transition-colors">
+              <span>Facebook</span><span class="text-crimson-500">↗</span>
+            </a>
+            <a href="https://linktr.ee/shahriarahmed" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-3 rounded-xl bg-white/80 hover:bg-crimson-50 border border-crimson-600/10 text-sm font-semibold text-ink-900 hover:text-crimson-700 transition-colors">
+              <span>Linktree</span><span class="text-crimson-500">↗</span>
+            </a>
+            <a href="https://portfolio.malloy.sg/ShahriarAhmedSamir" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-3 rounded-xl bg-white/80 hover:bg-crimson-50 border border-crimson-600/10 text-sm font-semibold text-ink-900 hover:text-crimson-700 transition-colors">
+              <span>Malloy</span><span class="text-crimson-500">↗</span>
+            </a>
+            <a href="https://1000framescom.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between px-4 py-3 rounded-xl bg-white/80 hover:bg-crimson-50 border border-crimson-600/10 text-sm font-semibold text-ink-900 hover:text-crimson-700 transition-colors">
+              <span>1000Frames</span><span class="text-crimson-500">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================= -->
+  <!-- EDITORIAL FOOTER (evanhfisher.com style)                                -->
+  <!-- ======================================================================= -->
+  <footer class="relative z-10 border-t border-crimson-600/15 bg-white/60 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-crimson-600/10">
+
+        <!-- Brand Info -->
+        <div class="md:col-span-5 space-y-4">
+          <a href="#home" data-route="home" class="inline-flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-full bg-gradient-to-br from-crimson-600 to-crimson-700 text-white flex items-center justify-center font-serif italic text-lg">S</span>
+            <span class="font-bold text-lg text-ink-900">Shahriar Ahmed Samir</span>
+          </a>
+          <p class="text-sm text-ink-700 leading-relaxed max-w-sm">
+            High-retention Long-Form YouTube, Pokémon TCG, Short-Form Reels &amp; Gaming video editor helping creators turn views into loyal communities.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <a href="https://www.fiverr.com/s/2pQEK88" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-crimson-600 text-white hover:bg-crimson-700 transition-colors">Message Me on Fiverr</a>
+            <a href="#contact" data-route="contact" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-crimson-600/20 text-crimson-700 hover:bg-crimson-50 transition-colors">Book 30-Min Call</a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="md:col-span-3 space-y-3">
+          <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ PAGES ]</p>
+          <ul class="space-y-2 text-sm text-ink-700">
+            <li><a href="#home" data-route="home" class="hover:text-crimson-700 transition-colors">Home</a></li>
+            <li><a href="#about" data-route="about" class="hover:text-crimson-700 transition-colors">About</a></li>
+            <li><a href="#pokemon" data-route="pokemon" class="hover:text-crimson-700 transition-colors">Pokémon</a></li>
+            <li><a href="#reels" data-route="reels" class="hover:text-crimson-700 transition-colors">Reels</a></li>
+            <li><a href="#gaming" data-route="gaming" class="hover:text-crimson-700 transition-colors">Gaming</a></li>
+            <li><a href="#contact" data-route="contact" class="hover:text-crimson-700 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social & Links -->
+        <div class="md:col-span-4 space-y-3">
+          <p class="font-mono text-xs uppercase tracking-widest text-crimson-600 font-semibold">[ CONNECT ]</p>
+          <div class="grid grid-cols-2 gap-y-2 gap-x-4 text-sm text-ink-700">
+            <a href="https://www.youtube.com/@shahriarahmedsamir" target="_blank" rel="noopener noreferrer" class="hover:text-crimson-700 transition-colors">YouTube ↗</a>
+            <a href="https://www.instagram.com/shahriar.jpeg/" target="_blank" rel="noopener noreferrer" class="hover:text-crimson-700 transition-colors">Instagram ↗</a>
+            <a href="https://x.com/shahriar_jpeg" target="_blank" rel="noopener noreferrer" class="hover:text-crimson-700 transition-colors">X / Twitter ↗</a>
+            <a href="https://www.facebook.com/shahriaraahmedsamir" target="_blank" rel="noopener noreferrer" class="hover:text-crimson-700 transition-colors">Facebook ↗</a>
+            <a href="https://www.upwork.com/freelancers/~01baa86143bbc37409" target="_blank" rel="noopener noreferrer" class="hover:text-crimson-700 transition-colors">Upwork ↗</a>
+            <a href="https://portfolio.malloy.sg/ShahriarAhmedSamir" target="_blank" rel="noopener noreferrer" class="hover:text-crimson-700 transition-colors">Malloy ↗</a>
+            <a href="https://1000framescom.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-crimson-700 transition-colors">1000Frames ↗</a>
+            <a href="https://linktr.ee/shahriarahmed" target="_blank" rel="noopener noreferrer" class="hover:text-crimson-700 transition-colors">Linktree ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-ink-500">
+        <p>© 2026 Shahriar Ahmed Samir. All rights reserved.</p>
+        <p>Discord: Shahriar.jpeg · Samedits@icloud.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================= -->
+  <!-- FLOATING BOTTOM-RIGHT CIRCLE INTRO BUBBLE (Persistent Across Pages)     -->
+  <!-- ======================================================================= -->
+  <div id="floating-intro-bubble" class="fixed bottom-5 right-5 z-30 flex items-center gap-2">
+    <div class="relative group">
+      <!-- Dismiss Bubble Button -->
+      <button type="button"
+              onclick="dismissFloatingBubble()"
+              aria-label="Hide Watch Intro Bubble"
+              class="absolute -top-1.5 -right-1.5 z-10 w-6 h-6 rounded-full bg-white text-ink-700 hover:bg-crimson-600 hover:text-white border border-crimson-600/20 shadow flex items-center justify-center text-xs transition-colors">
+        ✕
+      </button>
+
+      <!-- Circle Trigger -->
+      <button type="button"
+              onclick="openIntroModal()"
+              class="flex items-center gap-3 pl-2 pr-4 py-2 rounded-full bg-white/92 backdrop-blur-xl border border-crimson-600/25 shadow-rose-hover hover:-translate-y-1 transition-all duration-200 focus:outline-none">
+        <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-crimson-600 bg-crimson-700 shrink-0">
+          <img src="https://i.ytimg.com/vi/HKNAx6V1SMU/hqdefault.jpg"
+               alt="Intro preview"
+               class="w-full h-full object-cover scale-125"
+               onerror="this.style.display='none'" />
+          <div class="absolute inset-0 bg-ink-900/35 flex items-center justify-center">
+            <svg class="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="text-left pr-1">
+          <span class="block font-mono text-[10px] uppercase tracking-wider text-crimson-600 font-semibold leading-tight">Watch Intro</span>
+          <span class="block text-xs font-bold text-ink-900 leading-tight mt-0.5">Meet Shahriar</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- UNIFIED CINEMA VIDEO MODAL PLAYER                                       -->
+  <!-- ======================================================================= -->
+  <div id="video-modal"
+       class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-ink-900/80 backdrop-blur-md"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-video-title">
+    <div id="modal-panel" class="modal-panel relative w-full max-w-4xl bg-white/95 backdrop-blur-2xl rounded-3xl border border-crimson-600/20 shadow-2xl overflow-hidden max-h-[94vh] flex flex-col">
+
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between gap-3 px-5 sm:px-6 py-4 border-b border-crimson-600/10 bg-crimson-50/50">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span id="modal-category-pill" class="px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold bg-crimson-600 text-white shrink-0">Category</span>
+          <span id="modal-duration" class="font-mono text-xs text-ink-500 shrink-0">00:00</span>
+          <h3 id="modal-video-title" class="text-sm sm:text-base font-bold text-ink-900 truncate">Video Title</h3>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <!-- Aspect Ratio Toggle (16:9 Widescreen vs 9:16 Vertical Shorts) -->
+          <button type="button"
+                  id="aspect-toggle-btn"
+                  onclick="toggleModalAspect()"
+                  class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-white hover:bg-crimson-50 text-ink-700 border border-crimson-600/15 transition-colors"
+                  title="Switch player aspect ratio">
+            <span id="aspect-toggle-label">Vertical 9:16</span>
+          </button>
+
+          <!-- Close Button -->
+          <button type="button"
+                  onclick="closeVideoModal()"
+                  aria-label="Close Video Player"
+                  class="w-9 h-9 rounded-full bg-white hover:bg-crimson-600 text-ink-800 hover:text-white border border-crimson-600/15 flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Video Embed Area -->
+      <div class="bg-ink-900 flex items-center justify-center overflow-hidden">
+        <div id="modal-iframe-wrapper" class="w-full aspect-video max-h-[62vh] transition-all duration-300">
+          <iframe id="modal-youtube-iframe"
+                  src=""
+                  title="YouTube video player"
+                  class="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Modal Editorial Notes & Controls Footer -->
+      <div class="p-5 sm:p-6 space-y-4 overflow-y-auto">
+        <p id="modal-video-notes" class="text-sm sm:text-base text-ink-700 leading-relaxed">
+          Editorial review summary...
+        </p>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-crimson-600/10">
+          <!-- Prev / Next Navigation -->
+          <div id="modal-playlist-controls" class="flex items-center gap-2">
+            <button type="button" id="modal-prev-btn" onclick="playAdjacentVideo(-1)"
+                    class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-mono font-semibold bg-white hover:bg-crimson-50 text-ink-800 border border-crimson-600/20 transition-colors">
+              ← Prev
+            </button>
+            <button type="button" id="modal-next-btn" onclick="playAdjacentVideo(1)"
+                    class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-mono font-semibold bg-white hover:bg-crimson-50 text-ink-800 border border-crimson-600/20 transition-colors">
+              Next →
+            </button>
+          </div>
+
+          <!-- External Actions -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <a id="modal-youtube-link"
+               href="https://youtu.be/HKNAx6V1SMU"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-crimson-50 hover:bg-crimson-100 text-crimson-700 border border-crimson-600/15 transition-colors">
+              <span>Watch on YouTube ↗</span>
+            </a>
+            <a href="https://www.fiverr.com/s/2pQEK88"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-700 hover:to-crimson-800 shadow-sm transition-all">
+              <span>Book Similar Edit ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- CUSTOM TOAST NOTIFICATION (Replaces alert() completely)                 -->
+  <!-- ======================================================================= -->
+  <div id="toast-container"
+       class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-4 transition-all duration-300">
+    <div class="px-5 py-3 rounded-full bg-ink-900 text-white text-sm font-medium shadow-xl border border-crimson-400/30 flex items-center gap-2.5">
+      <span class="w-2 h-2 rounded-full bg-crimson-400"></span>
+      <span id="toast-message">Copied!</span>
+    </div>
+  </div>
+
+  <!-- Calendly External Widget Script -->
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <!-- ======================================================================= -->
+  <!-- APPLICATION LOGIC: SPA ROUTING, DATASETS, MODAL PLAYER & UTILITIES      -->
+  <!-- ======================================================================= -->
+  <script>
+    /* -----------------------------------------------------------------------
+       1. CURATED VIDEO DATASETS (Reviewed from Shahriar's Playlists)
+       ----------------------------------------------------------------------- */
+    const INTRO_VIDEO = {
+      id: 'HKNAx6V1SMU',
+      title: 'Meet Shahriar Ahmed Samir — Editor Introduction',
+      duration: 'Intro',
+      category: 'Introduction',
+      isVertical: false,
+      notes: 'Welcome! Here is a quick personal introduction to my editing style, retention philosophy, and how I help YouTubers, Pokémon TCG channels, and gaming creators grow.'
+    };
+
+    const POKEMON_VIDEOS = [
+      {
+        id: 'SpkgbHbs_fg',
+        title: 'Pokémon Draft 01: Twilight Masquerade Pack Battle',
+        duration: '19:32',
+        category: 'Long-Form',
+        isVertical: false,
+        notes: '18-round Twilight Masquerade booster box battle (Lyla vs. Benjamin) featuring score tracking, full-art & EX pull highlights, comedic pacing, and a Crown Zenith bonus finale.'
+      },
+      {
+        id: 'hgYxRuCsZ3U',
+        title: "Champion's Path Mystery Box & 151 Charizard EX Reveal",
+        duration: '24:03',
+        category: 'Long-Form',
+        isVertical: false,
+        notes: 'Long-form unboxing of a Marnie Premium Collection mystery box edited for maximum hype, building up to an unforgettable 151 Charizard EX chase reveal.'
+      },
+      {
+        id: 'Eq_Ye2_74KQ',
+        title: 'Shrouded Fable Illustration Boxes Rip (Poke Mike)',
+        duration: '04:29',
+        category: 'Long-Form',
+        isVertical: false,
+        notes: 'Snappy opening of Kingambit, Kingdra ex & Greninja ex Illustration Boxes with crisp jump cuts, promo highlights, and energetic SFX.'
+      },
+      {
+        id: 'H7rmySGn5bU',
+        title: 'Rare Pokémon Cards: Ascended Heroes EX Pulls',
+        duration: '00:53',
+        category: 'Shorts',
+        isVertical: true,
+        notes: 'High-retention vertical TCG short featuring live Ungraded & PSA 10 price pop-ups, retro chiptune audio, meme inserts, and animated callouts.'
+      },
+      {
+        id: 'Bs9CqJ8FYxU',
+        title: 'Blind Ranking Pokémon: Gen 3 Contest Beauty Standards',
+        duration: '02:04',
+        category: 'Shorts',
+        isVertical: true,
+        notes: 'Fast-paced Pokémon blind ranking edit (Dragapult, Cinccino, Sableye, Zoroark, Crabominable) built with punchy motion graphics.'
+      },
+      {
+        id: 'ST9_36QmBkI',
+        title: "Rare Pokémon Cards You've Never Seen (Showcase Reel)",
+        duration: '01:39',
+        category: 'Shorts',
+        isVertical: true,
+        notes: 'Dynamic Pokémon TCG reel with smooth zoom transitions, rhythmic sound design, and retention-driven pacing.'
+      },
+      {
+        id: 'uk9f3fRV-T0',
+        title: 'Pokémon TCG Live Edit #5',
+        duration: '01:24',
+        category: 'Live Project',
+        isVertical: true,
+        notes: 'CapCut Pro live editing project with animated card highlights, energy transitions, and crisp beat sync.'
+      },
+      {
+        id: 'ljubbHgopcw',
+        title: 'Pokémon TCG Live Edit #4',
+        duration: '01:24',
+        category: 'Live Project',
+        isVertical: true,
+        notes: 'Clean TCG card reveal edit showcasing smooth motion effects and punchy SFX.'
+      },
+      {
+        id: '8SO8jbB_eGY',
+        title: 'Pokémon TCG Live Edit #3',
+        duration: '01:05',
+        category: 'Live Project',
+        isVertical: true,
+        notes: 'Retention-focused Pokémon pack opening edit designed for short-form social feeds.'
+      },
+      {
+        id: 'e3hPsxAz0-s',
+        title: 'Pokémon TCG Live Edit #2',
+        duration: '00:41',
+        category: 'Live Project',
+        isVertical: true,
+        notes: 'Viral-paced TCG highlight cut (1.1K+ views) with sharp card transitions and timing.'
+      },
+      {
+        id: 'Admqr5P-snQ',
+        title: 'Pokémon TCG Live Edit #1',
+        duration: '01:50',
+        category: 'Live Project',
+        isVertical: true,
+        notes: 'Foundational CapCut live project showcasing card overlays, zooming, and rhythmic cuts.'
+      }
+    ];
+
+    const REELS_VIDEOS = [
+      {
+        id: 'SmdGxzNcI9w',
+        title: "The Brother's Street Food — Speed Ramp Promo Reel",
+        duration: '00:33',
+        category: 'Speed Ramp',
+        isVertical: true,
+        notes: 'High-energy commercial street-food reel featuring a satellite Earth zoom-in, beat-synced speed ramps, whip transitions, and punchy bass drops.'
+      },
+      {
+        id: 'GTaYhJRwv7k',
+        title: 'High-Retention Animation & Elimination Short',
+        duration: '00:15',
+        category: 'Motion GFX',
+        isVertical: true,
+        notes: 'Fast-cut animated crossover (Batman, Light Yagami, Kratos) with kinetic typography, elimination VFX, glitch cuts, and impact sound design.'
+      },
+      {
+        id: '6V_4i81XCR8',
+        title: 'Iceland Explorer — Talking Head & 3D Text B-Roll',
+        duration: '00:14',
+        category: 'Talking Head',
+        isVertical: true,
+        notes: 'Crisp talking-head opener paired with depth-masked "Iceland" title graphics behind mountains, seamless drone waterfall B-roll, and immersive SFX.'
+      },
+      {
+        id: 'SzcO6ArT4wA',
+        title: 'A Minecraft Movie — Viral Story Recap Reel',
+        duration: '01:06',
+        category: 'Story Recap',
+        isVertical: true,
+        notes: 'Engaging vertical movie recap edit with spoiler badges, directional callouts, glowing portal VFX, and continuous narrative momentum.'
+      },
+      {
+        id: 'h8fyoEeVYFA',
+        title: 'Cinematic Movie Scene Cut & Pacing Showcase',
+        duration: '01:45',
+        category: 'Cinematic',
+        isVertical: false,
+        notes: 'Dramatic film edit highlighting emotional pacing, audio layering, and seamless scene transitions.'
+      }
+    ];
+
+    const GAMING_VIDEOS = [
+      {
+        id: 'JrD2XYKj0PE',
+        title: 'GTA V Comedy Challenge — Avatar & Meme Edit',
+        duration: '00:31',
+        category: 'GTA V',
+        isVertical: true,
+        notes: 'Comedic GTA V challenge edit packed with expressive animated PNG-tuber avatar reactions, flame border VFX, rapid word-by-word captions, meme cutaways, and snappy SFX.'
+      },
+      {
+        id: 'SzcO6ArT4wA',
+        title: 'Minecraft Movie — Gaming Lore & Story Breakdown',
+        duration: '01:06',
+        category: 'Minecraft',
+        isVertical: true,
+        notes: 'Hook-first Minecraft storytelling edit with custom graphic pointers, dramatic zooms, and glowing Nether/Overworld portal transitions.'
+      },
+      {
+        id: 'GTaYhJRwv7k',
+        title: 'Kratos Daily Routine — Gaming Motion Graphics',
+        duration: '00:15',
+        category: 'God of War',
+        isVertical: true,
+        notes: 'Viral gaming humor short featuring Kratos with bold word-synced kinetic captions, punchy impact frames, and tight comedic timing.'
+      },
+      {
+        id: 'SpkgbHbs_fg',
+        title: 'Pokémon TCG Arena — 18-Round Pack Battle',
+        duration: '19:32',
+        category: 'Competitive TCG',
+        isVertical: false,
+        notes: 'Full-length head-to-head gaming battle edit keeping energy high across 18 consecutive rounds with scoreboard momentum and reveal tension.'
+      }
+    ];
+
+    // Signature picks for the Home page Featured Showcase (1 Pokémon, 1 Reel, 1 Gaming)
+    const FEATURED_PICKS = [
+      { ...POKEMON_VIDEOS[0], showcaseLabel: 'Pokémon · Long-Form' },
+      { ...REELS_VIDEOS[0], showcaseLabel: 'Reels · Speed Ramp' },
+      { ...GAMING_VIDEOS[0], showcaseLabel: 'Gaming · GTA V' }
+    ];
+
+    // Recent Highlights Index on Home page
+    const HIGHLIGHTS_INDEX = [
+      POKEMON_VIDEOS[1],
+      REELS_VIDEOS[2],
+      POKEMON_VIDEOS[3],
+      GAMING_VIDEOS[0],
+      REELS_VIDEOS[1],
+      POKEMON_VIDEOS[2]
+    ];
+
+    /* -----------------------------------------------------------------------
+       2. STATE FOR ACTIVE MODAL PLAYLIST & ASPECT RATIO
+       ----------------------------------------------------------------------- */
+    let activePlaylist = [];
+    let activeIndex = 0;
+    let isVerticalMode = false;
+    let activePokemonFilter = 'all';
+
+    /* -----------------------------------------------------------------------
+       3. VIDEO CARD BUILDER
+       ----------------------------------------------------------------------- */
+    function createVideoCardHTML(video, listName, index, badgeOverride = null) {
+      const thumbUrl = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
+      const fallbackUrl = `https://placehold.co/640x360/be123c/ffffff?text=${encodeURIComponent(video.category)}`;
+      const badgeText = badgeOverride || video.category;
+
+      return `
+        <article class="glass-card group rounded-2xl overflow-hidden flex flex-col cursor-pointer hover:-translate-y-1.5"
+                 onclick="openVideoFromList('${listName}', ${index})"
+                 tabindex="0"
+                 role="button"
+                 aria-label="Play ${video.title.replace(/"/g, '&quot;')}"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openVideoFromList('${listName}', ${index});}">
+          <!-- Thumbnail Preview -->
+          <div class="relative aspect-video bg-ink-900 overflow-hidden">
+            <img src="${thumbUrl}"
+                 alt="${video.title.replace(/"/g, '&quot;')}"
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.onerror=null;this.src='${fallbackUrl}';" />
+
+            <!-- Soft Gradient Scrim -->
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-900/75 via-ink-900/15 to-transparent group-hover:from-ink-900/55 transition-colors"></div>
+
+            <!-- Category Badge (Top Left) -->
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold bg-white/92 text-crimson-700 backdrop-blur-md shadow-sm">
+              ${badgeText}
+            </span>
+
+            <!-- Duration Pill (Bottom Right) -->
+            <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-ink-900/85 text-white backdrop-blur-sm">
+              ${video.duration}
+            </span>
+
+            <!-- Center Play Button Overlay -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-white/95 text-crimson-600 flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-crimson-600 group-hover:text-white transition-all duration-200">
+                <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial Body -->
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-base sm:text-lg font-bold text-ink-900 group-hover:text-crimson-700 transition-colors leading-snug mb-2">
+                ${video.title}
+              </h3>
+              <p class="text-sm text-ink-700 leading-relaxed line-clamp-3">
+                ${video.notes}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-crimson-600/10 flex items-center justify-between text-xs font-mono">
+              <span class="text-crimson-600 font-semibold group-hover:translate-x-0.5 transition-transform">Play Preview →</span>
+              <span class="text-ink-400">HD Embed</span>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    /* -----------------------------------------------------------------------
+       4. RENDER ALL GRIDS & LISTS
+       ----------------------------------------------------------------------- */
+    function renderHomeContent() {
+      // Featured 3-column showcase
+      const featuredEl = document.getElementById('home-featured-grid');
+      if (featuredEl) {
+        featuredEl.innerHTML = FEATURED_PICKS.map((v, idx) =>
+          createVideoCardHTML(v, 'featured', idx, v.showcaseLabel)
+        ).join('');
+      }
+
+      // Numbered Highlights Index (evanhfisher.com 001 / style)
+      const indexEl = document.getElementById('home-highlights-index');
+      if (indexEl) {
+        indexEl.innerHTML = HIGHLIGHTS_INDEX.map((v, idx) => {
+          const num = String(idx + 1).padStart(3, '0');
+          return `
+            <div onclick="openVideoFromList('highlights', ${idx})"
+                 role="button"
+                 tabindex="0"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openVideoFromList('highlights', ${idx});}"
+                 class="group px-5 sm:px-7 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-crimson-50/75 transition-colors cursor-pointer">
+              <div class="flex items-start sm:items-center gap-4 min-w-0">
+                <span class="font-mono text-xs font-bold text-crimson-600 shrink-0 mt-1 sm:mt-0">${num} /</span>
+                <div class="min-w-0">
+                  <h3 class="text-sm sm:text-base font-bold text-ink-900 group-hover:text-crimson-700 transition-colors truncate">${v.title}</h3>
+                  <p class="text-xs text-ink-500 mt-0.5 truncate">${v.notes}</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 pl-9 sm:pl-0">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-white border border-crimson-600/15 text-ink-700">${v.category}</span>
+                <span class="font-mono text-xs text-ink-500">${v.duration}</span>
+                <span class="inline-flex items-center gap-1 text-xs font-mono font-semibold text-crimson-600 group-hover:translate-x-0.5 transition-transform">
+                  Play ▶
+                </span>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    function renderPokemonGrid(filter = 'all') {
+      activePokemonFilter = filter;
+      const grid = document.getElementById('pokemon-grid');
+      if (!grid) return;
+
+      const filtered = filter === 'all'
+        ? POKEMON_VIDEOS
+        : POKEMON_VIDEOS.filter(v => v.category === filter);
+
+      grid.innerHTML = filtered.map((v, idx) =>
+        createVideoCardHTML(v, 'pokemonFiltered', idx)
+      ).join('');
+
+      // Update Filter Pill Styles
+      document.querySelectorAll('#pokemon-filters .filter-pill').forEach(btn => {
+        const isMatch = btn.dataset.filter === filter;
+        if (isMatch) {
+          btn.className = 'filter-pill active px-4 py-2 rounded-full text-xs font-mono font-semibold transition-all bg-crimson-600 text-white shadow-sm';
+        } else {
+          btn.className = 'filter-pill px-4 py-2 rounded-full text-xs font-mono font-semibold transition-all bg-white/80 text-ink-700 hover:bg-crimson-50 border border-crimson-600/15';
+        }
+      });
+    }
+
+    function renderReelsGrid() {
+      const grid = document.getElementById('reels-grid');
+      if (!grid) return;
+      grid.innerHTML = REELS_VIDEOS.map((v, idx) =>
+        createVideoCardHTML(v, 'reels', idx)
+      ).join('');
+    }
+
+    function renderGamingGrid() {
+      const grid = document.getElementById('gaming-grid');
+      if (!grid) return;
+      grid.innerHTML = GAMING_VIDEOS.map((v, idx) =>
+        createVideoCardHTML(v, 'gaming', idx)
+      ).join('');
+    }
+
+    /* -----------------------------------------------------------------------
+       5. CINEMA VIDEO MODAL ENGINE
+       ----------------------------------------------------------------------- */
+    function getListByName(listName) {
+      switch (listName) {
+        case 'featured': return FEATURED_PICKS;
+        case 'highlights': return HIGHLIGHTS_INDEX;
+        case 'pokemonFiltered':
+          return activePokemonFilter === 'all'
+            ? POKEMON_VIDEOS
+            : POKEMON_VIDEOS.filter(v => v.category === activePokemonFilter);
+        case 'reels': return REELS_VIDEOS;
+        case 'gaming': return GAMING_VIDEOS;
+        case 'intro': return [INTRO_VIDEO];
+        default: return POKEMON_VIDEOS;
+      }
+    }
+
+    function openVideoFromList(listName, index) {
+      activePlaylist = getListByName(listName);
+      activeIndex = index;
+      openCinemaModal(activePlaylist[activeIndex]);
+    }
+
+    function openIntroModal() {
+      activePlaylist = [INTRO_VIDEO];
+      activeIndex = 0;
+      openCinemaModal(INTRO_VIDEO);
+    }
+
+    function openCinemaModal(video) {
+      if (!video) return;
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('modal-youtube-iframe');
+      const titleEl = document.getElementById('modal-video-title');
+      const catEl = document.getElementById('modal-category-pill');
+      const durEl = document.getElementById('modal-duration');
+      const notesEl = document.getElementById('modal-video-notes');
+      const ytLink = document.getElementById('modal-youtube-link');
+      const controlsEl = document.getElementById('modal-playlist-controls');
+
+      titleEl.textContent = video.title;
+      catEl.textContent = video.category;
+      durEl.textContent = video.duration;
+      notesEl.textContent = video.notes;
+      ytLink.href = `https://youtu.be/${video.id}`;
+
+      // Show or hide Prev/Next controls when multiple items exist
+      controlsEl.style.display = activePlaylist.length > 1 ? 'flex' : 'none';
+
+      // Default aspect ratio (always clean widescreen 16:9 unless user toggles vertical)
+      isVerticalMode = false;
+      applyModalAspect();
+
+      // Embed YouTube with autoplay & modestbranding
+      iframe.src = `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`;
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function playAdjacentVideo(delta) {
+      if (!activePlaylist.length) return;
+      activeIndex = (activeIndex + delta + activePlaylist.length) % activePlaylist.length;
+      openCinemaModal(activePlaylist[activeIndex]);
+    }
+
+    function toggleModalAspect() {
+      isVerticalMode = !isVerticalMode;
+      applyModalAspect();
+    }
+
+    function applyModalAspect() {
+      const wrapper = document.getElementById('modal-iframe-wrapper');
+      const label = document.getElementById('aspect-toggle-label');
+      if (!wrapper || !label) return;
+
+      if (isVerticalMode) {
+        wrapper.className = 'w-[320px] sm:w-[350px] aspect-[9/16] max-h-[64vh] transition-all duration-300';
+        label.textContent = 'Widescreen 16:9';
+      } else {
+        wrapper.className = 'w-full aspect-video max-h-[62vh] transition-all duration-300';
+        label.textContent = 'Vertical 9:16';
+      }
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('modal-youtube-iframe');
+      modal.classList.remove('open');
+      // Immediately clear src to stop playback & audio
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    // Close modal when clicking backdrop or pressing ESC
+    document.getElementById('video-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'video-modal') {
+        closeVideoModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      const modalOpen = document.getElementById('video-modal').classList.contains('open');
+      if (!modalOpen) return;
+      if (e.key === 'Escape') closeVideoModal();
+      if (e.key === 'ArrowRight' && activePlaylist.length > 1) playAdjacentVideo(1);
+      if (e.key === 'ArrowLeft' && activePlaylist.length > 1) playAdjacentVideo(-1);
+    });
+
+    /* -----------------------------------------------------------------------
+       6. SPA ROUTING & HASH SYNCING
+       ----------------------------------------------------------------------- */
+    const VALID_ROUTES = ['home', 'about', 'pokemon', 'reels', 'gaming', 'contact'];
+
+    function navigateTo(route, updateHash = true) {
+      const targetRoute = VALID_ROUTES.includes(route) ? route : 'home';
+
+      // Switch visible section
+      document.querySelectorAll('.page-view').forEach(section => {
+        section.classList.remove('active');
+      });
+      const activeSection = document.getElementById(`page-${targetRoute}`);
+      if (activeSection) {
+        activeSection.classList.add('active');
+      }
+
+      // Highlight active desktop nav link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.dataset.route === targetRoute) {
+          link.classList.add('active-nav');
+        } else {
+          link.classList.remove('active-nav');
+        }
+      });
+
+      // Close mobile drawer if open
+      closeMobileDrawer();
+
+      // Update URL hash cleanly
+      if (updateHash && window.location.hash !== `#${targetRoute}`) {
+        try {
+          history.pushState(null, '', `#${targetRoute}`);
+        } catch (err) {
+          window.location.hash = targetRoute;
+        }
+      }
+
+      // Scroll smoothly to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Intercept internal SPA route links
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[data-route]');
+      if (!link) return;
+      e.preventDefault();
+      navigateTo(link.dataset.route, true);
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hashRoute = window.location.hash.replace('#', '').toLowerCase();
+      navigateTo(hashRoute || 'home', false);
+    });
+
+    /* -----------------------------------------------------------------------
+       7. MOBILE NAVIGATION DRAWER
+       ----------------------------------------------------------------------- */
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeMenuIcon = document.getElementById('close-menu-icon');
+
+    function closeMobileDrawer() {
+      mobileDrawer.classList.add('hidden');
+      hamburgerIcon.classList.remove('hidden');
+      closeMenuIcon.classList.add('hidden');
+      mobileBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    mobileBtn.addEventListener('click', () => {
+      const isHidden = mobileDrawer.classList.contains('hidden');
+      if (isHidden) {
+        mobileDrawer.classList.remove('hidden');
+        hamburgerIcon.classList.add('hidden');
+        closeMenuIcon.classList.remove('hidden');
+        mobileBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        closeMobileDrawer();
+      }
+    });
+
+    /* -----------------------------------------------------------------------
+       8. FLOATING INTRO BUBBLE DISMISS
+       ----------------------------------------------------------------------- */
+    function dismissFloatingBubble() {
+      const bubble = document.getElementById('floating-intro-bubble');
+      if (bubble) {
+        bubble.style.opacity = '0';
+        bubble.style.transform = 'translateY(12px)';
+        bubble.style.transition = 'all 0.25s ease';
+        setTimeout(() => bubble.remove(), 260);
+      }
+    }
+
+    /* -----------------------------------------------------------------------
+       9. ABOUT PAGE: PORTRAIT FALLBACKS & LOCAL FILE LOADER
+       ----------------------------------------------------------------------- */
+    function syncPortraitFallbacks() {
+      [0, 1, 2].forEach((idx) => {
+        const imgEl = document.getElementById(`portrait-img-${idx}`);
+        const failedBeforeParse = window.__failedPortraits && window.__failedPortraits.has(idx);
+        const brokenImage = imgEl && imgEl.complete && imgEl.naturalWidth === 0;
+        if (failedBeforeParse || brokenImage) {
+          window.showPortraitFallback(imgEl, idx);
+        }
+      });
+    }
+
+    const localPortraitsInput = document.getElementById('local-portraits-input');
+    if (localPortraitsInput) {
+      localPortraitsInput.addEventListener('change', (e) => {
+        const files = Array.from(e.target.files || []).slice(0, 3);
+        if (!files.length) return;
+
+        files.forEach((file, idx) => {
+          const objectUrl = URL.createObjectURL(file);
+          const imgEl = document.getElementById(`portrait-img-${idx}`);
+          const fallbackEl = document.getElementById(`portrait-fallback-${idx}`);
+          if (imgEl) {
+            imgEl.src = objectUrl;
+            imgEl.style.display = 'block';
+          }
+          if (fallbackEl) {
+            fallbackEl.classList.add('hidden');
+          }
+        });
+        showToast(`Loaded ${files.length} portrait image${files.length > 1 ? 's' : ''}!`);
+      });
+    }
+
+    /* -----------------------------------------------------------------------
+       10. CLIPBOARD COPY (iFrame-safe via document.execCommand) & TOAST
+       ----------------------------------------------------------------------- */
+    let toastTimeout = null;
+
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const textEl = document.getElementById('toast-message');
+      if (!container || !textEl) return;
+
+      textEl.textContent = message;
+      container.classList.remove('opacity-0', 'translate-y-4');
+      container.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        container.classList.remove('opacity-100', 'translate-y-0');
+        container.classList.add('opacity-0', 'translate-y-4');
+      }, 2600);
+    }
+
+    function copyToClipboard(text, successMsg) {
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast(successMsg);
+      } catch (err) {
+        showToast(`Copy: ${text}`);
+      }
+    }
+
+    /* -----------------------------------------------------------------------
+       11. INITIALIZATION ON DOM CONTENT LOADED
+       ----------------------------------------------------------------------- */
+    document.addEventListener('DOMContentLoaded', () => {
+      syncPortraitFallbacks();
+      renderHomeContent();
+      renderPokemonGrid('all');
+      renderReelsGrid();
+      renderGamingGrid();
+
+      // Bind Pokémon Filter Buttons
+      document.querySelectorAll('#pokemon-filters .filter-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          renderPokemonGrid(btn.dataset.filter);
+        });
+      });
+
+      // Resolve initial hash route
+      const initialHash = window.location.hash.replace('#', '').toLowerCase();
+      navigateTo(initialHash || 'home', false);
+    });
+  </script>
+</body>
+</html>
